@@ -1,0 +1,94 @@
+export EDITOR="nvim"
+export BAT_THEME="Nord"
+
+alias c=clear
+
+#important configuration files
+alias vlightdm="sudo nvim /etc/lightdm/lightdm.conf"
+alias vpacman="sudo nvim /etc/pacman.conf"
+alias vgrub="sudo nvim /etc/default/grub"
+alias vconfgrub="sudo nvim /boot/grub/grub.cfg"
+alias vmkinitcpio="sudo nvim /etc/mkinitcpio.conf"
+alias vmirrorlist="sudo nvim /etc/pacman.d/mirrorlist"
+
+#list
+alias ls='exa --git'
+alias la='ls -a'
+alias ll='ls -la'
+alias l='ls -la'
+alias l.=""
+unalias l.
+
+alias lconf-reload="source ~/.bashrc-personal"
+
+v() { nvim "${1:-.}" ; }
+alias vconf="v ~/.config/nvim/init.vim"
+alias lconf="v ~/.bashrc-personal && lconf-reload"
+alias aconf="v ~/.config/alacritty/alacritty.yml"
+alias xmconf="v ~/.xmonad/xmonad.hs"
+alias pbconf="v ~/.config/polybar/config"
+alias pblaunch=".config/polybar/launch.sh"
+alias xmerr="bat ~/.xmonad/xmonad.errors"
+
+#git & yadm
+g() { git ${@:-status -sb} ; }
+ga() { git add --all ${@:-} ; }
+gc() {
+  if [[ $# > 0 ]]; then
+    git commit -m "$*"
+  else
+    git commit -v
+  fi
+}
+
+# g() {
+#   if [[ $# > 0 ]]; then
+#     git "$@"
+#   else
+#     git status -sb
+#   fi
+# }
+
+y() { yadm ${@:-status -sb} ; }
+ya() { yadm add -u ${@:-} ; }
+yc() {
+  if [[ $# > 0 ]]; then
+    yadm commit -m "$*"
+  else
+    yadm commit -v
+  fi
+}
+
+# y() {
+#   if [[ $# > 0 ]]; then
+#     yadm "$@"
+#   else
+#     yadm status -sb
+#   fi
+# }
+# ya() {
+#   if [[ $# > 0 ]]; then
+#     yadm add -u "$@"
+#   else
+#     yadm add -u
+#   fi
+# }
+
+#other
+alias clip="CM_LAUNCHER=fzf clipmenu"
+
+yay() {
+  echo "umm... it's called paru"
+}
+
+# Load asdf
+source $HOME/.asdf/asdf.sh
+source $HOME/.asdf/completions/asdf.bash
+
+# Load fzf
+source /usr/share/fzf/key-bindings.bash
+source /usr/share/fzf/completion.bash
+
+# Load prompt
+eval "$(starship init bash)"
+
