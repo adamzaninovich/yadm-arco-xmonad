@@ -1,0 +1,141 @@
+# Adam's Starship Config
+#
+# Docs: https://starship.rs/config
+# font: https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/FiraCode.zip
+# icon reference: https://www.nerdfonts.com/cheat-sheet (use copy icon)
+
+# Don't print a new line at the start of the prompt
+add_newline = false
+
+[character]
+success_symbol = "[](bold bright-green)"
+error_symbol = "[](bold bright-red)"
+vicmd_symbol = "[ ](bold bright-green)"
+# success_symbol = "[](bold bright-green)"
+# error_symbol = "[](bold bright-red)"
+# vicmd_symbol = "[](bold bright-green)"
+
+[cmd_duration]
+show_notifications = false
+format = "[ 鬒$duration]($style)"
+style = "bold bright-yellow"
+
+[battery]
+format = "[$symbol $percentage]($style) "
+
+[[battery.display]]
+threshold = 20
+style = "bold bright-red"
+
+[username]
+format = "[𣏕$user]($style) "
+disabled = false
+show_always = true
+style = "bold bright-yellow"
+
+[hostname]
+ssh_only = false
+format = "[異$hostname]($style) "
+style = "bold bright-red"
+
+[directory]
+read_only = "  "
+format = "[ $path]($style)[$read_only]($read_only_style)"
+style = "bold bright-cyan"
+truncation_length = 1
+home_symbol = "\\e[2D " # go back 2 characters and overwrite the folder symbol
+
+[git_branch]
+# symbol = " "
+symbol = " "
+format = " [$symbol$branch]($style)"
+style = "bold bright-green"
+truncation_length = 24
+
+[git_status]
+format = '([$all_status$ahead_behind]($style))'
+style = "bold bright-yellow"
+
+[elixir]
+symbol = " "
+format = ' [$symbol($version)]($style) [ ($otp_version)](bold bright-red)'
+style = "bold bright-purple"
+
+[erlang]
+symbol = " "
+format = ' [$symbol($version)]($style)'
+style = "bold bright-red"
+
+[rust]
+symbol = " "
+format = " [$symbol($version)]($style)"
+style = "bold bright-red"
+
+[nodejs]
+symbol = " "
+format = " [$symbol($version)]($style)"
+disabled = false
+
+[ruby]
+symbol = " "
+format = " [$symbol($version)]($style)"
+style = "bold bright-red"
+# 
+# 
+
+[python]
+symbol = " "
+format = " [$symbol($version)]($style)"
+style = "bold bright-yellow"
+
+[package]
+symbol = " "
+disabled = true
+
+[aws]
+symbol = " "
+
+[conda]
+symbol = " "
+
+[dart]
+symbol = " "
+
+[docker]
+symbol = " "
+
+[elm]
+symbol = " "
+
+[golang]
+symbol = " "
+
+[haskell]
+symbol = " "
+
+[hg_branch]
+symbol = " "
+
+[java]
+symbol = " "
+
+[julia]
+symbol = " "
+
+[memory_usage]
+symbol = " "
+
+[nim]
+symbol = " "
+
+[nix_shell]
+symbol = " "
+
+[perl]
+symbol = " "
+
+[php]
+symbol = " "
+
+[swift]
+symbol = "ﯣ "
