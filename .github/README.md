@@ -13,4 +13,5 @@ https://sourceforge.net/projects/arcolinux-community-editions/files/xmonad/
 
 1. copy over bat config
 2. try jonaburg/picom
-3. 
+3. copy gpg keys and setup ssh and git signing
+4. 
