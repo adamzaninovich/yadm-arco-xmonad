@@ -24,3 +24,5 @@
   sort = -committerdate
 [init]
   defaultBranch = main
+[pull]
+	ff = only
