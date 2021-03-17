@@ -493,7 +493,7 @@ format-discharging-foreground = ${colors.foreground}
 format-discharging-background = ${colors.background}
 
 ;format-full-prefix = "     "
-format-full-prefix = "     "
+format-full-prefix = " "
 format-full-prefix-foreground = ${colors.nord-normal-green}
 ;format-full-overline = ${colors.nord-normal-green}
 format-full-foreground = ${colors.foreground}
