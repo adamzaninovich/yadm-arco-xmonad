@@ -36,20 +36,19 @@ xsetroot -cursor_name left_ptr &
 # (conky -c $HOME/.xmonad/scripts/system-overview) &
 
 #starting utility applications at boot time
-# run variety &
+run nitrogen --restore &
 run nm-applet &
 run clipmenud &
 # run pamac-tray &
 run xfce4-power-manager &
 run volumeicon &
 numlockx on &
-blueberry-tray &
+# blueberry-tray &
 picom --config $HOME/.xmonad/scripts/picom.conf &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 /usr/lib/xfce4/notifyd/xfce4-notifyd &
 
 #starting user applications at boot time
-nitrogen --restore &
 #run caffeine &
 #run vivaldi-stable &
 #run firefox &
