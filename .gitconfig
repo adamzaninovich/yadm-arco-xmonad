@@ -1,5 +1,26 @@
-[init]
-	defaultBranch = main
+# This is Git's per-user configuration file.
 [user]
-	email = adam.zaninovich@gmail.com
-	name = Adam Zaninovich
+  name = Adam Zaninovich
+  email = adam.zaninovich@gmail.com
+  # signingkey = 29E932E5BE1B8445
+# [commit]
+#   gpgsign = true
+[alias]
+  s = status
+  c = commit -v
+  b = branch
+  a = add
+  amend = commit --amend
+  co = checkout
+  undo-commit = reset --soft HEAD^
+  unstage = reset HEAD
+[color]
+  ui = auto
+[push]
+  default = simple
+[help]
+  autocorrect = 1
+[branch]
+  sort = -committerdate
+[init]
+  defaultBranch = main
