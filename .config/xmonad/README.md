@@ -23,7 +23,12 @@ _Please be kind, and forgive my sins. I am not a Haskell programmer._
 | Super C           | Toggle Conky                        |
 | Super A           | Run Activity Monitor (gotop)        |
 | Super H           | Run Activity Manager (htop)         |
-| Super P           | Run Application Launcher (dmenu)    |
+| Super P           | Run Application Launcher (rofi)     |
+| Alt Space         | Run Application Launcher (rofi)     |
+| Alt E             | Run Emoji Picker (rofi)             |
+| Alt C             | Run Calculator (rofi)               |
+| Alt =             | Run Calculator (rofi)               |
+| Super Alt C       | Run Clipboard Manager (rofi)        |
 | Super Shift D     | Run Application Launcher (dmenu)    |
 | Super T           | Toggle System Tray                  |
 | Super Y           | Toggle Polybar                      |
@@ -34,6 +39,7 @@ _Please be kind, and forgive my sins. I am not a Haskell programmer._
 | Ctrl Alt K        | Logout Arco Linux                   |
 | Ctrl Alt O        | Toggle Transparency (picom)         |
 | Crtl Alt B        | Open Chrome Browser                 |
+| Crtl Alt D        | Open iCloud Drive in Chrome         |
 | Crtl Alt E        | Open Arco Linux Tweak Tool          |
 | Crtl Alt I        | Open Nitrogen                       |
 | Crtl Alt S        | Open Spotify                        |

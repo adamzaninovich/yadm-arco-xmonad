@@ -162,7 +162,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   , ((modMask, xK_a), spawn $ myTerminal ++ " -t 'Activity Monitor | gotop' -e gotop" )
   , ((modMask, xK_h), spawn $ myTerminal ++ " -t 'Activity Manager | htop' -e htop" )
   , ((modMask, xK_slash), spawn $ myTerminal ++ " -t 'XMonad Help' -e bat --style=plain --theme=Nord ~/.config/xmonad/README.md" )
-  , ((modMask, xK_p), spawn $ dmenuCmd )
+  , ((modMask, xK_p), spawn $ "rofi -show run" )
   , ((modMask, xK_q), kill )
   , ((modMask, xK_t), spawn $ "$HOME/.xmonad/scripts/toggle-stalonebar.sh" )
   , ((modMask, xK_y), spawn $ "polybar-msg cmd toggle" )
@@ -201,6 +201,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   , ((controlMask .|. mod1Mask , xK_Prior ), spawn $ "conky-rotate -p")
   -- , ((controlMask .|. mod1Mask , xK_a ), spawn $ "xfce4-appfinder")
   , ((controlMask .|. mod1Mask , xK_b ), spawn $ "google-chrome-stable")
+  , ((controlMask .|. mod1Mask , xK_d ), spawn $ "google-chrome-stable https://www.icloud.com/iclouddrive/")
   -- , ((controlMask .|. mod1Mask , xK_c ), spawn $ "catfish")
   , ((controlMask .|. mod1Mask , xK_e ), spawn $ "arcolinux-tweak-tool")
   -- , ((controlMask .|. mod1Mask , xK_f ), spawn $ "firefox")
@@ -221,10 +222,15 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
 
   -- ALT + ... KEYS
 
+  , ((mod1Mask, xK_space), spawn $ "rofi -show run" )
+  , ((mod1Mask, xK_e), spawn $ "rofi -show emoji -modi emoji" )
+  , ((mod1Mask, xK_c), spawn $ "rofi -show calc -modi calc -no-show-match -no-sort -no-persist-history" )
+  , ((mod1Mask, xK_equal), spawn $ "rofi -show calc -modi calc -no-show-match -no-sort -no-persist-history" )
+  , ((mod1Mask .|. modMask , xK_c ), spawn $ "CM_LAUNCHER=rofi clipmenu")
+  , ((mod1Mask, xK_r), spawn $ "xmonad --restart" )
   -- , ((mod1Mask, xK_f), spawn $ "variety -f" )
   -- , ((mod1Mask, xK_n), spawn $ "variety -n" )
   -- , ((mod1Mask, xK_p), spawn $ "variety -p" )
-  , ((mod1Mask, xK_r), spawn $ "xmonad --restart" )
   -- , ((mod1Mask, xK_t), spawn $ "variety -t" )
   -- , ((mod1Mask, xK_Up), spawn $ "variety --pause" )
   -- , ((mod1Mask, xK_Down), spawn $ "variety --resume" )
