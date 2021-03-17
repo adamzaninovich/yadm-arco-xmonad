@@ -159,7 +159,8 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
 
   [((modMask, xK_c), spawn $ "conky-toggle" )
   , ((modMask, xK_f), sendMessage $ Toggle NBFULL)
-  , ((modMask, xK_h), spawn $ myTerminal ++ " -t 'Activity Monitor | gotop' -e gotop" )
+  , ((modMask, xK_a), spawn $ myTerminal ++ " -t 'Activity Monitor | gotop' -e gotop" )
+  , ((modMask, xK_h), spawn $ myTerminal ++ " -t 'Activity Manager | htop' -e htop" )
   , ((modMask, xK_slash), spawn $ myTerminal ++ " -t 'XMonad Help' -e bat --style=plain --theme=Nord ~/.config/xmonad/README.md" )
   , ((modMask, xK_p), spawn $ dmenuCmd )
   , ((modMask, xK_q), kill )

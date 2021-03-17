@@ -21,7 +21,8 @@ _Please be kind, and forgive my sins. I am not a Haskell programmer._
 | Super Q           | Kill Window                         |
 | Super Shift Q     | Kill Window                         |
 | Super C           | Toggle Conky                        |
-| Super H           | Run Activity Monitor (gotop)        |
+| Super A           | Run Activity Monitor (gotop)        |
+| Super H           | Run Activity Manager (htop)         |
 | Super P           | Run Application Launcher (dmenu)    |
 | Super Shift D     | Run Application Launcher (dmenu)    |
 | Super T           | Toggle System Tray                  |
