@@ -11,8 +11,9 @@ https://sourceforge.net/projects/arcolinux-community-editions/files/xmonad/
 
 ## TODO
 
-1. [ ] copy over bat config
-2. [ ] copy gpg keys and setup ssh and git signing
-3. [x] setup VPNs
-4. [ ] try jonaburg/picom
-5. [ ] complete list of programs above
+1. [x] copy over bat config
+2. [x] copy gpg keys and setup ssh and git signing
+3. [ ] fix gpg ssh
+4. [x] setup VPNs
+5. [ ] try jonaburg/picom
+6. [ ] complete list of programs above
