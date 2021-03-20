@@ -62,6 +62,11 @@ yay() {
   echo "umm... it's called paru"
 }
 
+# Load GPG
+if [ -f $HOME/.config/bash/setup-gpg-agent ]; then
+  source $HOME/.config/bash/setup-gpg-agent
+fi
+
 # Load asdf
 source $HOME/.asdf/asdf.sh
 source $HOME/.asdf/completions/asdf.bash
