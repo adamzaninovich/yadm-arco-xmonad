@@ -19,9 +19,13 @@ alias l='ls -la'
 alias l.=""
 unalias l.
 
-alias lconf-reload="source ~/.bashrc-personal"
+alias open="xdg-open"
+alias pbcopy="xclip -i -selection clipboard"
+alias pbpaste="xclip -o -selection clipboard"
 
+alias lconf-reload="source ~/.bashrc-personal"
 v() { nvim "${1:-.}" ; }
+alias todo="v ~/.github/README.md"
 alias vconf="v ~/.config/nvim/init.vim"
 alias lconf="v ~/.bashrc-personal && lconf-reload"
 alias aconf="v ~/.config/alacritty/alacritty.yml"
@@ -41,14 +45,6 @@ gc() {
   fi
 }
 
-# g() {
-#   if [[ $# > 0 ]]; then
-#     git "$@"
-#   else
-#     git status -sb
-#   fi
-# }
-
 y() { yadm ${@:-status -sb} ; }
 ya() { yadm add -u ${@:-} ; }
 yc() {
@@ -58,21 +54,6 @@ yc() {
     yadm commit -v
   fi
 }
-
-# y() {
-#   if [[ $# > 0 ]]; then
-#     yadm "$@"
-#   else
-#     yadm status -sb
-#   fi
-# }
-# ya() {
-#   if [[ $# > 0 ]]; then
-#     yadm add -u "$@"
-#   else
-#     yadm add -u
-#   fi
-# }
 
 #other
 alias clip="CM_LAUNCHER=fzf clipmenu"
