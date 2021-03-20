@@ -2,9 +2,9 @@
 [user]
   name = Adam Zaninovich
   email = adam.zaninovich@gmail.com
-  # signingkey = 29E932E5BE1B8445
-# [commit]
-#   gpgsign = true
+  signingkey = 29E932E5BE1B8445
+[commit]
+  gpgsign = true
 [alias]
   s = status
   c = commit -v
@@ -25,4 +25,4 @@
 [init]
   defaultBranch = main
 [pull]
-	rebase = false
+  rebase = false
