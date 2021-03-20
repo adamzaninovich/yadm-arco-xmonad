@@ -1,0 +1,11 @@
+#!/bin/bash
+
+set -e
+
+if [[ -n "$(pgrep xfce4-appfinder)" ]]; then
+  killall xfce4-appfinder
+else
+  xfce4-appfinder &
+fi
+
+exit 0

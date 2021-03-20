@@ -111,18 +111,16 @@ enable-ipc = true
 
 
 ;https://github.com/jaagr/polybar/wiki/Fonts
-font-0 = "Noto Sans:size=10;0"
-font-1 = "FiraCode Nerd Font:size=13;0"
-;font-1 = "FontAwesome:size=13;0"
-font-2 = "Noto Sans:size=10;0"
+font-0 = "Noto Sans:size=11;0"
+font-1 = "FiraCode Nerd Font:style=Retina:size=13.0:antialias=true"
+font-2 = "Noto Sans:style=Bold:size=12;0"
 font-3 = "Noto Sans Mono:size=10;0"
 font-4 = "FiraCode Nerd Font:style=Retina:size=20.0:antialias=true"
-;font-4 = "FontAwesome5Brands:size=13;0"
 
 modules-left = xmonad-icon ewmh xwindow
 modules-center = date
 ;modules-right = spotify2 weather pavolume wireless-network battery hostname
-modules-right = weather pavolume wireless-network battery hostname
+modules-right = weather pacman-updates pavolume wireless-network battery hostname
 
 ; TODO: replace with standalonetray
 ;tray-detached = false
@@ -133,72 +131,6 @@ modules-right = weather pavolume wireless-network battery hostname
 ;tray-scale = 0.84
 ;tray-position = right
 ;tray-background = ${colors.background}
-
-
-################################################################################
-################################################################################
-############                  MAINBAR-XMONAD-EXTRA                  ############
-################################################################################
-################################################################################
-
-[bar/mainbar-xmonad-extra]
-monitor = ${env:MONITOR}
-;monitor-fallback = HDMI1
-monitor-strict = false
-override-redirect = false
-width = 100%
-height = 30
-;offset-x = 1%
-;offset-y = 1%
-radius = 0.0
-fixed-center = true
-bottom = true
-separator = |
-dpi = 144
-
-background = ${colors.background}
-foreground = ${colors.foreground}
-
-line-size = 2
-line-color = #f00
-
-;border-size = 2
-;border-left-size = 25
-;border-right-size = 25
-border-top-size = 10
-;border-bottom-size = 25
-border-color = #00000000
-
-padding-left = 0
-padding-right = 1
-
-module-margin-left = 3
-module-margin-right = 3
-
-; Enable support for inter-process messaging
-; See the Messaging wiki page for more details.
-enable-ipc = true
-
-;https://github.com/jaagr/polybar/wiki/Fonts
-font-0 = "Noto Sans:size=10;0"
-font-1 = "FontAwesome:size=13;0"
-font-2 = "Noto Sans:size=10;0"
-font-3 = "Noto Sans Mono:size=10;0"
-font-4 = "FontAwesome5Brands:size=13;0"
-
-modules-left = load-average
-modules-center = networkspeeddown networkspeedup
-modules-right = filesystem
-
-;tray-detached = false
-;tray-offset-x = 0
-;tray-offset-y = 0
-;tray-padding = 2
-;tray-maxsize = 20
-;tray-scale = 1.0
-;tray-position = right
-;tray-background = ${colors.background}
-
 
 ################################################################################
 ################################################################################
@@ -552,31 +484,31 @@ format-padding = 2
 ;   %percentage% (default) - total cpu load
 ;   %percentage-cores% - load percentage for each core
 ;   %percentage-core[1-9]% - load percentage for specific core
-label-font = 3
+label-font = 1
 label = Cpu %percentage:3%%
 ramp-coreload-0 = ▁
-ramp-coreload-0-font = 3
+ramp-coreload-0-font = 1
 ramp-coreload-0-foreground = #aaff77
 ramp-coreload-1 = ▂
-ramp-coreload-1-font = 3
+ramp-coreload-1-font = 1
 ramp-coreload-1-foreground = #aaff77
 ramp-coreload-2 = ▃
-ramp-coreload-2-font = 3
+ramp-coreload-2-font = 1
 ramp-coreload-2-foreground = #aaff77
 ramp-coreload-3 = ▄
-ramp-coreload-3-font = 3
+ramp-coreload-3-font = 1
 ramp-coreload-3-foreground = #aaff77
 ramp-coreload-4 = ▅
-ramp-coreload-4-font = 3
+ramp-coreload-4-font = 1
 ramp-coreload-4-foreground = #fba922
 ramp-coreload-5 = ▆
-ramp-coreload-5-font = 3
+ramp-coreload-5-font = 1
 ramp-coreload-5-foreground = #fba922
 ramp-coreload-6 = ▇
-ramp-coreload-6-font = 3
+ramp-coreload-6-font = 1
 ramp-coreload-6-foreground = #ff5555
 ramp-coreload-7 = █
-ramp-coreload-7-font = 3
+ramp-coreload-7-font = 1
 ramp-coreload-7-foreground = #ff5555
 
 ################################################################################
@@ -593,7 +525,7 @@ format-prefix = "  "
 format-prefix-foreground = #cd1f3f
 format-overline = #cd1f3f
 
-label-font = 3
+label-font = 1
 
 ; Available tags:
 ;   <label> (default)
@@ -615,6 +547,7 @@ label = Cpu %percentage:3%%
 [module/date]
 ;https://github.com/jaagr/polybar/wiki/Module:-date
 type = internal/date
+label-font = 3
 ; Seconds to sleep between updates
 interval = 5
 ; See "http://en.cppreference.com/w/cpp/io/manip/put_time" for details on how to format the date string
@@ -926,15 +859,15 @@ format-connected-background = ${colors.background}
 
 [module/pacman-updates]
 type = custom/script
-;exec = pacman -Qu | wc -l
 exec = checkupdates | wc -l
 interval = 1000
-label = Repo: %output%
+label = %output%
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
-format-prefix = "  "
-format-prefix-foreground = #FFBB00
-format-overline = #FFBB00
+format-prefix = "   "
+format-prefix-foreground = ${colors.nord-bright-red}
+format-overline = ${colors.nord-bright-red}
+click-left = ~/.config/polybar/scripts/pacupdates &
 
 ################################################################################
 

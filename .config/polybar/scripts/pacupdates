@@ -1,0 +1,18 @@
+#!/bin/bash
+
+title="Alacritty | System Update"
+
+tty_escape() { printf "\033[%sm" "$1"; }
+tty_mkbold() { tty_escape "1;$1"; }
+tty_yellow="$(tty_mkbold 33)"
+tty_white="$(tty_mkbold 39)"
+tty_reset="$(tty_escape 0)"
+
+read -r -d '' cmd <<EOF
+echo "${tty_yellow}Password Required for System Update${tty_reset}"
+sudo pacman -Syu
+echo
+read -p "${tty_white}Press any key to exit${tty_reset}"
+EOF
+
+alacritty -t "$title" -e $SHELL -c "$cmd"
