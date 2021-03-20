@@ -92,7 +92,6 @@ myMouseBindings (XConfig {XMonad.modMask = modMask}) = M.fromList $ [
 myKeyBindings conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $ [
   ----------------------------------------------------------------------
   -- SUPER + FUNCTION KEYS
-  ((modMask, xK_c), spawn $ "conky-toggle" ),
   ((modMask, xK_f), sendMessage $ Toggle NBFULL),
   ((modMask, xK_a), spawn $ myTerminal ++ " -t 'Activity Monitor | gotop' -e gotop" ),
   ((modMask, xK_h), spawn $ myTerminal ++ " -t 'Activity Manager | htop' -e htop" ),
@@ -177,7 +176,7 @@ myKeyBindings conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $ [
   -- Expand the master area.
   ((controlMask .|. shiftMask , xK_l), sendMessage Expand),
   -- Push window back into tiling.
-  ((controlMask .|. shiftMask , xK_t), withFocused $ windows . W.sink),
+  ((modMask .|. shiftMask , xK_t), withFocused $ windows . W.sink),
   -- Increment the number of windows in the master area.
   ((controlMask .|. modMask, xK_Left), sendMessage (IncMasterN 1)),
   -- Decrement the number of windows in the master area.
