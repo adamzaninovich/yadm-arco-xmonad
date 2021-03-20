@@ -65,8 +65,8 @@ myManageHook = composeAll . concat $
   ]
   where
     myFloats    = ["Screen"]
-    myCFloats   = ["Arandr", "Arcolinux-tweak-tool.py", "Arcolinux-welcome-app.py", "Galculator", "feh", "Nitrogen", "mpv"]
-    myTFloats   = ["Two-factor authentication", "Downloads", "Save As...", "XMonad Help"]
+    myCFloats   = ["Arandr", "Arcolinux-tweak-tool.py", "Arcolinux-welcome-app.py", "feh", "mpv", "Nitrogen"]
+    myTFloats   = ["Two-factor authentication", "Downloads", "Save As...", "seahorse", "XMonad Help"]
     myRFloats   = []
     myIgnores   = ["desktop_window"]
     myFFloats   = ["Arcologout.py"]
