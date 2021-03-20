@@ -1209,7 +1209,7 @@ content = " %{T5}%{T-}"
 ; content = " "
 ;             
 ;       
-;click-left = stalonetray &
+click-left = ~/.config/polybar/scripts/toggle-appfinder
 
 #################################################################################
 

@@ -1,38 +1,25 @@
 #!/bin/python
-# -*- coding: utf-8 -*-
-
-# Procedure
-# Surf to https://openweathermap.org/city
-# Fill in your CITY
-# e.g. Antwerp Belgium
-# Check url
-# https://openweathermap.org/city/2803138
-# you will the city code at the end
-# create an account on this website
-# create an api key (free)
-# LANG included thanks to krive001 on discord
-
 
 import requests
+import os
 
-#CITY = "5383431" # Shell Beach
-CITY = "5325738" # Bakersfield
-API_KEY = "756edce7e9d4c385ef9499a53492678c"
-UNITS = "Imperial"
-# UNIT_KEY = "C"
-UNIT_KEY = "F"
-LANG = "en"
-#LANG = "nl"
-#LANG = "hu"
+city = os.environ.get('POLYBAR_WEATHER_CITY')
+api_key = os.environ.get('POLYBAR_WEATHER_API_KEY')
 
-REQ = requests.get("http://api.openweathermap.org/data/2.5/weather?id={}&lang={}&appid={}&units={}".format(CITY, LANG,  API_KEY, UNITS))
-try:
-    # HTTP CODE = OK
-    if REQ.status_code == 200:
-        CURRENT = REQ.json()["weather"][0]["description"].capitalize()
-        TEMP = int(float(REQ.json()["main"]["temp"]))
-        print("{}, {} °{}".format(CURRENT, TEMP, UNIT_KEY))
-    else:
-        print("Error: BAD HTTP STATUS CODE " + str(REQ.status_code))
-except (ValueError, IOError):
-    print("Error: Unable print the data")
+units = "Imperial"
+unit_key = "F"
+lang = "en"
+
+if city and api_key:
+    try:
+        request = requests.get("http://api.openweathermap.org/data/2.5/weather?id={}&lang={}&appid={}&units={}".format(city, lang,  api_key, units))
+        if request.status_code == 200:
+            description = request.json()["weather"][0]["description"].capitalize()
+            temperature = int(float(request.json()["main"]["temp"]))
+            print("{}, {} °{}".format(description, temperature, unit_key))
+        else:
+            print("Error: Bad HTTP Status Code " + str(request.status_code))
+    except (ValueError, IOError):
+        print("No Weather Data")
+else:
+    print("Error: No config")
