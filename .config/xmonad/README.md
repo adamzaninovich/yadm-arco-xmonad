@@ -17,6 +17,7 @@ _Please be kind, and forgive my sins. I am not a Haskell programmer._
 | Super Shift K     | Swap Window Up                      |
 | Ctrl Shift H      | Shrink Master Area                  |
 | Ctrl Shift L      | Expand Master Area                  |
+| Ctrl Shift T      | Retile Floated Window               |
 | Super F           | Toggle Monacle/Full Screen          |
 | Super Q           | Kill Window                         |
 | Super Shift Q     | Kill Window                         |
