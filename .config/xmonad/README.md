@@ -46,6 +46,8 @@ _Please be kind, and forgive my sins. I am not a Haskell programmer._
 | Crtl Alt T        | Open Alacritty                      |
 | Crtl Alt Enter    | Open Alacritty                      |
 | PrintScreen       | Save Screenshot                     |
+| Super PrtSc       | Start Screen Recording              |
+| Super Ctrl PrtSc  | Stop Screen Recording               |
 | Alt Tab           | Next Workspace                      |
 | Ctrl Alt Right    | Next Workspace                      |
 | Ctrl Alt Left     | Previous Workspace                  |

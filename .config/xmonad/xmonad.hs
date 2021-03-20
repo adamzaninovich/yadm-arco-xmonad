@@ -30,7 +30,7 @@ nordForeground    = "#d8dee9"
 
 -- Settings
 myTerminal          = "alacritty"
-normBord            = nordBlack
+normBord            = nordBackground
 focdBord            = nordBrightPurple
 fore                = nordForeground
 back                = nordBackground
@@ -38,7 +38,7 @@ leftEdge            = 0
 underBar            = 37/1440
 myModMask           = mod4Mask -- Super
 myFocusFollowsMouse = True
-myBorderWidth       = 2
+myBorderWidth       = 3
 myWorkspaces        = ["main", "alt", "3","4","5"]
 myBaseConfig        = desktopConfig
 dmenuCmd            = "dmenu_run -i -l 20 " ++ dmenuFormat
@@ -118,7 +118,7 @@ myKeyBindings conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $ [
   ((controlMask .|. mod1Mask , xK_k ), spawn $ "arcolinux-logout"),
   ((controlMask .|. mod1Mask , xK_o ), spawn $ "$HOME/.xmonad/scripts/picom-toggle.sh"),
   ((controlMask .|. mod1Mask , xK_s ), spawn $ "spotify"),
-  ((controlMask .|. mod1Mask , xK_t ), spawn $ myTerminal),
+  -- ((controlMask .|. mod1Mask , xK_t ), spawn $ myTerminal),
   ((controlMask .|. mod1Mask , xK_Return ), spawn $ myTerminal),
   -- ALT + ... KEYS
   ((mod1Mask, xK_space), spawn $ "rofi -show run" ),
@@ -129,6 +129,10 @@ myKeyBindings conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $ [
   ((mod1Mask, xK_r), spawn $ "xmonad --restart" ),
   --SCREENSHOTS
   ((0, xK_Print), spawn $ "scrot 'ArcoLinux-%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f $$(xdg-user-dir PICTURES)'"),
+  -- start screenrecord
+  ((modMask, xK_Print), spawn $ "ffcast rec \"$HOME/screencast-%s-$(date -Is).mp4\""),
+  -- stop screenrecord
+  ((modMask .|. controlMask , xK_Print), spawn $ "pkill -fxn '(/\\S+)*ffmpeg\\s.*\\sx11grab\\s.*'"),
   --MULTIMEDIA KEYS
   -- Mute volume
   ((0, xF86XK_AudioMute), spawn $ "amixer -q set Master toggle"),
