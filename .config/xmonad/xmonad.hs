@@ -30,6 +30,7 @@ nordForeground    = "#d8dee9"
 
 -- Settings
 myTerminal          = "alacritty"
+myFileManager       = "pcmanfm"
 normBord            = nordBackground
 focdBord            = nordBrightPurple
 fore                = nordForeground
@@ -104,7 +105,7 @@ myKeyBindings conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $ [
   ((modMask, xK_Escape), spawn $ "xkill" ),
   ((modMask, xK_Return), spawn $ myTerminal ),
   -- SUPER + SHIFT KEYS
-  ((modMask .|. shiftMask , xK_Return ), spawn $ "thunar"),
+  ((modMask .|. shiftMask , xK_Return ), spawn $ myFileManager),
   ((modMask .|. shiftMask , xK_d ), spawn $ dmenuCmd ),
   ((modMask .|. shiftMask , xK_r ), spawn $ "xmonad --recompile && xmonad --restart"),
   ((modMask .|. shiftMask , xK_q ), kill),
