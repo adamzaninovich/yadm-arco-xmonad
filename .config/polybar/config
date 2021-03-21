@@ -1125,7 +1125,7 @@ format-prefix-foreground = ${colors.nord-normal-blue}
 ;format-overline = ${colors.nord-bright-blue}
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
-exec = python -u ~/.config/polybar/scripts/weather.py
+exec = ~/.config/polybar/scripts/weather.sh
 tail = true
 
 #################################################################################
