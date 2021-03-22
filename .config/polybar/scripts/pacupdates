@@ -11,6 +11,7 @@ tty_reset="$(tty_escape 0)"
 read -r -d '' cmd <<EOF
 echo "${tty_yellow}Password Required for System Update${tty_reset}"
 sudo pacman -Syu
+polybar-msg hook updates 1 &>/dev/null
 echo
 read -p "${tty_white}Press any key to exit${tty_reset}"
 EOF
