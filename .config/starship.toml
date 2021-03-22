@@ -43,7 +43,7 @@ read_only = "  "
 format = "[ $path]($style)[$read_only]($read_only_style)"
 style = "bold bright-cyan"
 truncation_length = 1
-home_symbol = "\\e[2D " # go back 2 characters and overwrite the folder symbol
+# home_symbol = "\\e[2D " # go back 2 characters and overwrite the folder symbol
 
 [git_branch]
 # symbol = " "
