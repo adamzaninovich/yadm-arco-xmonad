@@ -16,13 +16,14 @@ alias ls "exa --git"
 alias la "ls -a"
 alias ll "ls -la"
 alias l "ls -la"
+abbr -a tree exa --tree
 
 abbr -a open "xdg-open"
 abbr -a pbcopy "xclip -i -selection clipboard"
 abbr -a pbpaste "xclip -o -selection clipboard"
 
 function v
-  if set -q argv; or test -z $argv
+  if test -z "$argv"
     nvim .
   else
     nvim $argv
@@ -43,24 +44,24 @@ abbr -a xmerr "bat ~/.xmonad/xmonad.errors"
 
 #git & yadm
 function g
-  if set -q argv; or test -z $argv
+  if test -z "$argv"
     git status -sb
   else
     git $argv
   end
 end
 
-alias ga "git add --all"
+abbr -a ga "git add --all"
 
 function gc
-  if set -q argv; or test -z $argv
+  if test -z "$argv"
     git commit -v
   else
     git commit -m "$argv"
   end
 end
 
-alias gl "git log --show-signature"
+abbr -a gl "git log --show-signature"
 
 function y
   if test -z "$argv"
@@ -70,10 +71,10 @@ function y
   end
 end
 
-alias ya "yadm add --all"
+abbr -a ya "yadm add --all"
 
 function yc
-  if set -q argv; or test -z $argv
+  if test -z "$argv"
     yadm commit -v
   else
     yadm commit -m "$argv"
@@ -83,17 +84,8 @@ end
 #other
 alias yay "echo do you mean paru?"
 
-# Load GPG
-if test -f $HOME/.config/fish/setup-gpg-agent.fish
-  source $HOME/.config/fish/setup-gpg-agent.fish
-end
-
 # Load asdf
 source $HOME/.asdf/asdf.fish
-
-# Load fzf
-# source /usr/share/fzf/key-bindings.bash
-# source /usr/share/fzf/completion.bash
 
 # Load prompt
 starship init fish | source
