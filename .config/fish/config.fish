@@ -71,7 +71,7 @@ function y
   end
 end
 
-abbr -a ya "yadm add --all"
+abbr -a ya "yadm add -u"
 
 function yc
   if test -z "$argv"
